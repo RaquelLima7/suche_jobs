@@ -4,6 +4,7 @@
 @import "config/bootstrap_variables";
 
 // External libraries
+@import "@fortawesome/fontawesome-free/css/all.min.css";
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -31,3 +32,13 @@ h1.impact-text {
 .bg-site-red {
   background-color: $site-red;
 }
+
+.th-text-color {
+  color: 4F4F4F;
+}
+
+.page-item.active .page-link {  
+  background-color: $site-red;  
+  border-color: $site-red;
+}
+
