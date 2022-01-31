@@ -25,7 +25,7 @@
         <td><%= vacancy.requirements %></td>
         <td><%= vacancy.salary %></td>
         <td><%= vacancy.available %></td>
-        <td><%= vacancy.company_id %></td>
+        <td><%= vacancy.company.name %></td>
         <td><%= link_to 'Show', vacancy %></td>
         <td><%= link_to 'Edit', edit_vacancy_path(vacancy) %></td>
         <td><%= link_to 'Destroy', vacancy, method: :delete, data: { confirm: 'Are you sure?' } %></td>

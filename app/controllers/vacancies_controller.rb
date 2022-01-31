@@ -12,7 +12,7 @@ class VacanciesController < ApplicationController
 
   # GET /vacancies/new
   def new
-    @vacancy = Vacancy.new
+    @vacancy = Vacancy.new(available: true)
   end
 
   # GET /vacancies/1/edit
@@ -21,7 +21,7 @@ class VacanciesController < ApplicationController
 
   # POST /vacancies or /vacancies.json
   def create
-    @vacancy = Vacancy.new(vacancy_params)
+    @vacancy = current_company.vacancies.build(vacancy_params)
 
     respond_to do |format|
       if @vacancy.save
