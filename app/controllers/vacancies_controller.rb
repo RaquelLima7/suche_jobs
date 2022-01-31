@@ -1,16 +1,22 @@
 class VacanciesController < ApplicationController
+  skip_before_action :authenticate_company!, only:  %i[ show all ]
   before_action :set_vacancy, only: %i[ show edit update destroy ]
 
   # GET /vacancies or /vacancies.json
   def index
     @vacancies = current_company.vacancies.order(
       created_at: :desc
-    )#.page(params[:page]) #.per(2)
-    @vacancies = Vacancy.page(params[:page])
+    ).page(params[:page])
   end
 
   # GET /vacancies/1 or /vacancies/1.json
   def show
+  end
+
+  def all
+    @vacancies = Vacancy.where(
+      available: true
+    ).order(created_at: :desc).page(params[:page])
   end
 
   # GET /vacancies/new

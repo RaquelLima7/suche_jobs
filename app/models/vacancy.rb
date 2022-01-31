@@ -8,6 +8,4 @@ class Vacancy < ApplicationRecord
   validates :requirements, presence: true
   validates :salary, presence: true
   validates :available, presence: true
-
-  # max_paginates_per 1
 end
