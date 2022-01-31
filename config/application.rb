@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module SucheJobs
   class Application < Rails::Application
+    config.to_prepare do
+      Devise::RegistrationsController.layout "application"
+    end
+    
     config.generators do |generate|
       generate.assets false
       generate.helper false
