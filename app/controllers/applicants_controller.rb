@@ -1,6 +1,6 @@
 class ApplicantsController < ApplicationController
-  before_action :set_applicant, only: %i[ show edit update destroy ]
   skip_before_action :authenticate_company!, only: :create
+  before_action :set_applicant, only: %i[ show edit update destroy ]
 
   # GET /applicants or /applicants.json
   def index

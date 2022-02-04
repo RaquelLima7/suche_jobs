@@ -1,14 +1,32 @@
+<%= form_with(model: applicant, class: 'row g-3') do | form | %>
+  <% if applicant.errors.any? %>
+    <div id="error_explanation">
+      <h2>  <%= pluralize(applicant.errors.count, "error") %> prohibited this applicant from being saved:</h2>
 
-<%= simple_form_for(@applicant) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <ul>
+        <% applicant.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.association :vacancy %>
+  <div class="col-auto">
+    <%= form.label 'Nome', class: 'form-label', for: 'name' %>
+    <%= form.text_field :name, class: 'form-control', id: 'name' %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="col-auto">
+    <%= form.label 'currículo', for:"curriculum", class: 'form-label' %>
+    <%= form.file_field :curriculum, class: 'form-control', id: 'curriculum' %>
+  </div>
+
+  <div class="visually-hidden">
+    <%= form.label 'Vaga', for: 'vacancy' %>
+    <%= form.text_field :vacancy_id %>
+  </div>
+
+  <div class="col-auto mb-4 mt-5">
+    <%= form.submit "Candidatar-me", class: "btn btn-danger bg-site-red" %>
   </div>
 <% end %>

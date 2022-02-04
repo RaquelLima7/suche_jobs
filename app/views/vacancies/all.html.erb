@@ -1,7 +1,7 @@
 <div class="container">
-  <h1 class="mb-5">Vagas</h1>
+  <h1 class="m-5">Vagas</h1>
   <div class="row">
-    <div class="col-lg10">
+    <div class="col-lg-12">
       <% @vacancies.each do |vacancy| %>
         <%= render partial: 'vacancy_card', locals: { vacancy: vacancy } %>
       <% end %>
