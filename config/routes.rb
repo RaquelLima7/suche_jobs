@@ -12,5 +12,5 @@ Rails.application.routes.draw do
     resources :applicants, only: %i[index]
   end
   resources :vacancies
-  resources :companies
+  # resources :companies
 end
