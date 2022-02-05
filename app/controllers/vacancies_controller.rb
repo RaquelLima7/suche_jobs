@@ -68,7 +68,6 @@ class VacanciesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vacancy
-      # byebug
       @vacancy = Vacancy.find(params[:id])
     end
 

@@ -26,7 +26,7 @@ class ApplicantsController < ApplicationController
 
     respond_to do |format|
       if @applicant.save
-        format.html { redirect_to '/vacancies/all', notice: "Você se candidatou a vaga!" } 
+        format.html { redirect_to '/', notice: "Você se candidatou a vaga!" } 
         format.json { render :show, status: :created, location: @applicant }
       else
         @vacancy = Vacancy.find(@applicant.vacancy_id)
