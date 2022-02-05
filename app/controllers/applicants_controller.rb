@@ -4,7 +4,12 @@ class ApplicantsController < ApplicationController
 
   # GET /applicants or /applicants.json
   def index
-    @applicants = Applicant.all
+    @vacancy = Vacancy.find(params[:vacancy_id])
+    @applicants = Applicant.where(vacancy_id: params[:vacancy_id]).joins(:vacancy).where(@vacancy[company_id: current_company.id]).page(params[:page])
+    # Applicant.joins(:vacancy).where(
+    #   vacancy_id: params[:vacancy_id],
+    #   vacancy: { company_id: current_company.id }
+    # )
   end
 
   # GET /applicants/1 or /applicants/1.json
@@ -26,7 +31,7 @@ class ApplicantsController < ApplicationController
 
     respond_to do |format|
       if @applicant.save
-        format.html { redirect_to '/', notice: "Você se candidatou a vaga!" } 
+        format.html { redirect_to '/  ', notice: "Você se candidatou a vaga!" } 
         format.json { render :show, status: :created, location: @applicant }
       else
         @vacancy = Vacancy.find(@applicant.vacancy_id)

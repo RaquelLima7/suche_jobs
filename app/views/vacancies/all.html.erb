@@ -10,7 +10,7 @@
 
   <div class="d-flex">
     <div class="mx-auto mt-5">
-      <%= paginate @vacancies %>
+      <%= paginate @vacancies, outer_window: 3, left: 1, right: 3 %>
     </div>
   </div>
 
