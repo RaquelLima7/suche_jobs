@@ -4,9 +4,13 @@ class VacanciesController < ApplicationController
 
   # GET /vacancies or /vacancies.json
   def index
-    @vacancies = current_company.vacancies.order(
-      created_at: :desc
-    ).page(params[:page])
+    if params[:query].present?
+      @vacancies = Vacancy.search(params[:query]).page(params[:page])
+    else
+      @vacancies = current_company.vacancies.order(
+        created_at: :desc
+      ).page(params[:page])
+    end
   end
 
   # GET /vacancies/1 or /vacancies/1.json
@@ -14,9 +18,13 @@ class VacanciesController < ApplicationController
   end
 
   def all
-    @vacancies = Vacancy.where(
-      available: true
-    ).order(created_at: :desc).page(params[:page])
+    if params[:query].present?
+      @vacancies = Vacancy.search(params[:query]).page(params[:page])
+    else
+      @vacancies = Vacancy.where(
+        available: true
+      ).order(created_at: :desc).page(params[:page])
+    end
   end
 
   # GET /vacancies/new

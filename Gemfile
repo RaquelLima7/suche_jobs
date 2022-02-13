@@ -33,6 +33,7 @@ gem 'devise'
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass', '~> 5.15.1'
 gem 'simple_form'
+gem 'pg_search'
 
 
 group :development, :test do  gem 'pry-byebug'

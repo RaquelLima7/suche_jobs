@@ -8,4 +8,11 @@ class Vacancy < ApplicationRecord
   validates :requirements, presence: true
   validates :salary, presence: true
   validates :available, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search, 
+                  against: [:title, :location, :description, :requirements],
+                  using: {
+                    tsearch: { dictionary: "english", prefix: true } 
+                  }
 end

@@ -1,4 +1,10 @@
 <div class="container mb-5">
+  <%= simple_form_for :search, url: vacancies_path, method: "GET", html: { class: 'form-inline mt-5 d-flex justify-content-end' } do |f| %>
+    <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a vacancy" %> 
+    <%= button_tag type: 'submit', class: "btn btn-primary", id: "register-button" do %> 
+      <i class="fas fa-search"></i>
+    <% end %>
+  <% end %>
 
   <h1 class="m-5">Vacancies</h1>
 
