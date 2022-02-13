@@ -1,13 +1,16 @@
 <div class='container'>
-  <h1 class='mb-5'><%= @vacancy.title %></h1>
+  <%= link_to vacancies_path, :class => "icon-all my-5 text-decoration-none" do %>
+    <i class="fas fa-angle-double-left"></i> Back
+  <% end %>
+  <h1 class='my-5'><%= @vacancy.title %></h1>
 
   <table class="table">
     <thead class='table-active th-text-color'>
       <tr>
-        <th>Nome</th>
+        <th>Name</th>
         <th class='text-center'>Email</th>
-        <th class='text-center'>Enviado em</th>
-        <th class='text-center'>Ações</th>
+        <th class='text-center'>Sent in</th>
+        <th class='text-center'>Download CV</th>
       </tr>
     </thead>
 
@@ -18,8 +21,8 @@
           <td class="align-middle text-center"><%= applicant.email %></td>
           <td class="align-middle text-center"><%= applicant.created_at.strftime('%d/%m/%Y') %></td>
           <td class="align-middle text-center">
-            <a href='<%= rails_blob_path(applicant.curriculum) if applicant.curriculum.attached? %>' target="_blank" class="text-secondary text-decoration-none" aria-label="Left Align">
-              <i class="fas fa-file-download fa-fw"></i>Baixar
+            <a href='<%= rails_blob_path(applicant.curriculum) if applicant.curriculum.attached? %>' target="_blank" class="text-primary text-decoration-none" aria-label="Left Align">
+              <i class="fas fa-file-download fa-fw"></i>
             </a>
           </td>
         </tr>
