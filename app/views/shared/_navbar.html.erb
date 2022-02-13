@@ -29,6 +29,9 @@
     <ul class="navbar-nav ms-auto">
         <% if company_signed_in? %>
           <li class="nav-item">
+              <%= link_to('Atualizar dados', edit_company_registration_path(current_company), method: :get, class: 'nav-link') %>
+            </li>
+          <li class="nav-item">
             <%= link_to('Sair', destroy_company_session_path, method: :delete, class: 'nav-link') %>
           </li>
         <% else %>
