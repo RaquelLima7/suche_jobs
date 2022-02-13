@@ -1,8 +1,14 @@
+<%= link_to vacancies_path, :class => "icon-all mb-5" do %>
 <div class="container">
-  <h1>Editing Vacancy</h1>
+    <i class="fas fa-angle-double-left"></i>
+  <% end %>
 
-  <%= render 'form', vacancy: @vacancy %>
 
-  <%= link_to 'Show', @vacancy %> |
-  <%= link_to 'Back', vacancies_path %>
+  <div class="bg-white rounded p-3 shadow mt-5">
+    <div class="p-5">
+      <h1>Editing Vacancy</h1>
+
+      <%= render 'form', vacancy: @vacancy %>
+    </div>
+  </div>
 </div>

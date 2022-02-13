@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="col-auto">
-    <%= form.label 'Nome', class: 'form-label', for: 'name' %>
+    <%= form.label 'Name', class: 'form-label', for: 'name' %>
     <%= form.text_field :name, class: 'form-control', id: 'name' %>
   </div>
 
@@ -22,16 +22,16 @@
   </div>
 
   <div class="col-auto">
-    <%= form.label 'currículo', for:"curriculum", class: 'form-label' %>
+    <%= form.label 'CV', for:"curriculum", class: 'form-label' %>
     <%= form.file_field :curriculum, class: 'form-control', id: 'curriculum' %>
   </div>
 
   <div class="visually">
-    <%= form.label 'Vaga', for: 'vacancy' %>
+    <%= form.label 'Vacancy', for: 'vacancy' %>
     <%= form.text_field :vacancy_id %>
   </div>
 
-  <div class="col-auto mb-4 mt-5">
-    <%= form.submit "Candidatar-me", class: "btn btn-danger bg-site-red" %>
+  <div class="col-auto">
+    <%= form.submit "Aplly", class: "btn btn-primary" %>
   </div>
 <% end %>

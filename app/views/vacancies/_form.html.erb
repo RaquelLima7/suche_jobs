@@ -13,37 +13,37 @@
         </div>
       <% end %>
       <div class="mb-4">
-        <%= form.label 'Título', class: 'form-label' %>
+        <%= form.label 'Title', class: 'form-label' %>
 
         <%= form.text_field :title, autofocus: true, class: 'form-control' %>
       </div>
       <div class="mb-4">
-        <%= form.label 'Local', class: 'form-label' %>
+        <%= form.label 'Location', class: 'form-label' %>
 
         <%= form.text_field :location, class: 'form-control' %>
       </div>
       <div class="mb-4">
-        <%= form.label 'Descrição', class: 'form-label' %>
+        <%= form.label 'Description', class: 'form-label' %>
 
         <%= form.text_area :description, class: 'form-control' %>
       </div>
       <div class="mb-4">
-        <%= form.label 'Requisitos', class: 'form-label' %>
+        <%= form.label 'Requirements', class: 'form-label' %>
 
         <%= form.text_area :requirements, class: 'form-control' %>
       </div>
       <div class="mb-4">
-        <%= form.label 'Salário', class: 'form-label' %>
+        <%= form.label 'Salary', class: 'form-label' %>
 
         <%= form.text_field :salary, class: 'form-control' %>
       </div>
       <div class="mb-4">
         <%= form.check_box :available, class: 'form-check-input', id: 'availableCheck' %>
-        <%= form.label 'Disponível', class: "form-check-label", for: "availableCheck" %>
+        <%= form.label 'Available', class: "form-check-label", for: "availableCheck" %>
 
       </div>
       <div class="mb-4 mt-5">
-        <%= form.submit "Salvar", class: "btn btn-danger bg-site-red" %>
+        <%= form.submit "Save", class: "btn btn-primary btn-lg" %>
       </div>
     <% end %>
   </div>

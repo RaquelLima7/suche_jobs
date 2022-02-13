@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container mb-5">
 
   <h1 class="m-5">Vacancies</h1>
 
   <table class="table">
-    <thead class="table-active th-text-color">
+    <thead class="table-active">
       <tr>
-        <th>Anúncio</th>
-        <th>Criação</th>
-        <th>Candidatos</th>
+        <th>Vacancy</th>
+        <th>Creation date</th>
+        <th>Applicants</th>
         <th colspan="2"></th>
       </tr>
     </thead>
@@ -20,10 +20,10 @@
           <td class="align-middle"><%= vacancy.applicants.count %></td>
           <td class="align-middle">
             <%= link_to edit_vacancy_path(vacancy), class: "text-primary text-decoration-none mr-4" do %>
-              <i class="far fa-edit"></i>Editar
+              <i class="far fa-edit"></i> Edit
             <% end %>
             <a href="/vacancies/<%= vacancy.id %>/applicants" class="text-primary text-decoration-none">
-              <i class="far fa-user"></i>Candidatos
+              <i class="far fa-user"></i> Applicants
             </a>
           </td>
         </tr>

@@ -1,26 +1,32 @@
- <div class="container">
-  <div class="row mb-5">
-    <div class="col-lg-10">
-
+<div class="container">
+  <div class="row m-5">
+    <div class="col-md-7 col-sm-12">
       <h1 class="mb-4"> <%= @vacancy.title %></h1>
-      <p class="text-secondary"> <%= @vacancy.description %></p>
-      <p class="text-secondary"> <%= @vacancy.location %></p>
 
-     
-      <h3 class="mt-4 mb-4">Requisitos</h3>
-      <p class="text-secondary"> <%= @vacancy.requirements %></p>
+      <div class="my-5">
+        <p class="text-secondary"> <%= @vacancy.description %></p>
+        <p class="text-secondary"> <i class="fas fa-map-marker-alt"></i> <%= @vacancy.location %></p>
+      </div>
 
-      <h3 class="mt-4">Salário</h3>
-      <p class="text-secondary"> <%= @vacancy.salary %></p>
+      <div class="my-5">
+        <h3>Requirements:</h3>
+        <p class="text-secondary"> <%= @vacancy.requirements %></p>
+      </div>
 
-      <h3 class="mt-4">Currículo</h3>
-      <%= render partial: 'applicants/form', locals: { applicant: @applicant || Applicant.new(vacancy_id: @vacancy.id) } %>
-
-      <hr class="mt-5 mb-5">
-      <h2 class="mt-4 mb-4">Empresa</h2>
-      <h3 class="mt-4 mb-2"><%= @vacancy.company.name %></h3>
+      <h3 class="my-5">Salary: <span class="text-secondary"><%= @vacancy.salary %></span></h3>
+      <%# <p class="text-secondary"> </p> %>
+    </div>
+    <div class="col-md-4 offset-md-1 card">
+      <h3 class="mt-4 mb-4 text-center">Company</h2>
+      <h5 class="mt-4 mb-2"><i class="fas fa-building"></i> <%= @vacancy.company.name %></h3>
       <p class="text-secondary"> <%= @vacancy.company.description %></p>
-
+    </div>
+    
+    <div class="col-md-10">
+      <hr class="mt-5 mb-5">
+      <h3 class="my-4">Aplly now:</h3>
+      <%= render partial: 'applicants/form', locals: { applicant: @applicant || Applicant.new(vacancy_id: @vacancy.id) } %>
     </div>
   </div>
+  
 </div>
