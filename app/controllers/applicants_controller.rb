@@ -6,10 +6,6 @@ class ApplicantsController < ApplicationController
   def index
     @vacancy = Vacancy.find(params[:vacancy_id])
     @applicants = Applicant.where(vacancy_id: params[:vacancy_id]).joins(:vacancy).where(@vacancy[company_id: current_company.id]).page(params[:page])
-    # Applicant.joins(:vacancy).where(
-    #   vacancy_id: params[:vacancy_id],
-    #   vacancy: { company_id: current_company.id }
-    # )
   end
 
   # GET /applicants/1 or /applicants/1.json
@@ -71,6 +67,6 @@ class ApplicantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def applicant_params
-      params.require(:applicant).permit(:name, :vacancy_id, :curriculum)
+      params.require(:applicant).permit(:name, :vacancy_id, :curriculum, :email)
     end
 end
