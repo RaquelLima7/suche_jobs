@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "/", class: "navbar-brand" do %>
-    <img src="/assets/SucheJobs.png" class="img-fluid" alt="SucheJobs logo" />
+    <img src="/assets/SucheJobs.png" class="img-fluid logo" alt="SucheJobs logo" />
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,32 +11,32 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-        <a href= "/", class="nav-link" >Vagas</a>
+        <a href= "/", class="nav-link" >All Vacancies</a>
       </li>
       <% unless company_signed_in? %>
         <li class="nav-item">
-          <a class="nav-link" href="/companies/sign_up">Anunciar</a>
+          <a class="nav-link" href="/companies/sign_up">New Vacancy</a>
         </li>
       <% else %>
         <li class="nav-item">
-          <a class="nav-link" href="/vacancies/new">Anunciar</a>
+          <a class="nav-link" href="/vacancies/new">New Vacancy</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/vacancies">Meus Anúncios</a>
+          <a class="nav-link" href="/vacancies">My Vacancies</a>
         </li>
       <% end %>
     </ul>
     <ul class="navbar-nav ms-auto">
         <% if company_signed_in? %>
           <li class="nav-item">
-              <%= link_to('Atualizar dados', edit_company_registration_path(current_company), method: :get, class: 'nav-link') %>
+              <%= link_to('Edit Account', edit_company_registration_path(current_company), method: :get, class: 'nav-link') %>
             </li>
           <li class="nav-item">
-            <%= link_to('Sair', destroy_company_session_path, method: :delete, class: 'nav-link') %>
+            <%= link_to('Sign out', destroy_company_session_path, method: :delete, class: 'nav-link') %>
           </li>
         <% else %>
           <li class="nav-item">
-              <a class="nav-link" href="/companies/sign_in">Entrar</a>
+              <a class="nav-link" href="/companies/sign_in">Sign in</a>
           </li>
         <% end %>
     </ul>

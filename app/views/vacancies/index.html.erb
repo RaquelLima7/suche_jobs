@@ -8,7 +8,7 @@
         <th>Anúncio</th>
         <th>Criação</th>
         <th>Candidatos</th>
-        <th colspan="2">Ações</th>
+        <th colspan="2"></th>
       </tr>
     </thead>
 
@@ -19,10 +19,10 @@
           <td class="align-middle"><%= vacancy.created_at.strftime('%d/%m/%Y') %></td>
           <td class="align-middle"><%= vacancy.applicants.count %></td>
           <td class="align-middle">
-            <%= link_to edit_vacancy_path(vacancy), class: "text-secondary text-decoration-none" do %>
+            <%= link_to edit_vacancy_path(vacancy), class: "text-primary text-decoration-none mr-4" do %>
               <i class="far fa-edit"></i>Editar
             <% end %>
-            <a href="/vacancies/<%= vacancy.id %>/applicants" class="text-secondary text-decoration-none">
+            <a href="/vacancies/<%= vacancy.id %>/applicants" class="text-primary text-decoration-none">
               <i class="far fa-user"></i>Candidatos
             </a>
           </td>
@@ -37,5 +37,5 @@
   </div>
   <br>
 
-  <%= link_to 'New Vacancy', new_vacancy_path %>
+  <%= link_to 'New Vacancy', new_vacancy_path, class: 'btn btn-primary' %>
 </div>
