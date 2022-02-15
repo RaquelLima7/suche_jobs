@@ -1,5 +1,4 @@
 require_relative 'boot'
-config.assets.initialize_on_precompile = false
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -8,6 +7,7 @@ Bundler.require(*Rails.groups)
 
 module SucheJobs
   class Application < Rails::Application
+    config.assets.initialize_on_precompile = false
     config.to_prepare do
       Devise::RegistrationsController.layout "application"
     end
