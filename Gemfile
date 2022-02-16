@@ -34,6 +34,7 @@ gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass', '~> 5.15.1'
 gem 'simple_form'
 gem 'pg_search'
+gem 'sassc-rails'
 
 
 group :development, :test do  gem 'pry-byebug'
@@ -64,6 +65,7 @@ end
 
 group :production do
   gem 'mini_racer'
+  gem 'rails_12factor'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
