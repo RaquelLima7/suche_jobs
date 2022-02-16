@@ -1,6 +1,9 @@
 {
   "name": "suche_jobs",
   "private": true,
+  "engines": {
+    "node": "14.15.5"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@rails/actioncable": "^6.0.0",
