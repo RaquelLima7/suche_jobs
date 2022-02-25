@@ -32,3 +32,7 @@
 
 Suche jobs is a work platform. To apply for a vacancy, the candidates can simply search the vacancy requirements on the home page and click to view. The title, location, description, requirements, and salary will appear on the vacancy page, if the candidate wishes to apply, just inform the name, email, and attach the CV.
 For companies, they must be logged into the system. Once logged in, they will be able to view all vacancies, edit their profile, add a new vacancy and edit a vacancy. By clicking on “Applicants” they will be able to see all the candidates and download the CV.
+
+<br>
+
+🖌 Project made in Onebitcode bootcamp.
